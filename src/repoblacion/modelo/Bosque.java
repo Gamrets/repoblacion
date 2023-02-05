@@ -21,11 +21,13 @@ public class Bosque {
 		
 		setAncho(ancho);
 		setAlto(alto);
-		
-		
+		checkPoblacion(poblacion);
+		arboles = new Arbol[poblacion];
+		repoblar();
 	}
 	
-	
+
+
 	public int getAncho() {
 		return ancho;
 	}
@@ -81,5 +83,10 @@ public class Bosque {
 		}
 	}
 	
+	
+	private void repoblar() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

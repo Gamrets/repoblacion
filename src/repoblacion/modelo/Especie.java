@@ -2,7 +2,7 @@ package repoblacion.modelo;
 
 public enum Especie {
 
-ALAMO("Alamo"), ENCINA("Encina"), CASTAÑO("Castaño"), CIPRES("Ciprés"), PINO("Pino piñonero"),ROBLE("Roble"),OLIVO("Olivo");
+ALAMO("Alamo"), ENCINA("Encina"), CASTANO("Castaño"), CIPRES("Ciprés"), PINO("Pino piñonero"),ROBLE("Roble"),OLIVO("Olivo");
 	
 	private String cadenaAMostrar;
 

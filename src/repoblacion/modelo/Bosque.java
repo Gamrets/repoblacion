@@ -113,8 +113,9 @@ public class Bosque {
 		// Especie especieAleatoria = null;
 
 		// Generamos especie aleatoria
+		int n = generador.nextInt(7) + 0;
 
-		switch (generador.nextInt(7) + 0) {
+		switch (n) {
 			case 0:
 				return Especie.ALAMO;
 
@@ -164,7 +165,7 @@ public class Bosque {
 				epecieAnterior = null;
 			}
 
-			
+
 			// Vamos generando una especie y comprobandola con anterior en caso de que sea incompatible repetimos el proceso y en caso contrario salimos del bicle
 			do {
 
@@ -182,15 +183,15 @@ public class Bosque {
 					especieCompatible = false;
 				}
 
-			} while (especieCompatible == false);
+			} while (!especieCompatible);
 
 			arboles[i] = new Arbol(especieAleatoria, new Posicion(x, y));
 
 		}
 
 	}
-	
-	
+
+
 	public void realizarCalculos() {
 
 		//Creo 2 arboeles de referencia el de centro y mas alejado del centro
@@ -200,11 +201,11 @@ public class Bosque {
 		Arbol arbolMasCercanoReferenciado = new Arbol(Especie.ALAMO, perimetro);
 
 		//Recorro todos arboles y comparo con mas centrado
-		for (int i = 0; i < arboles.length; i++) {
+		for (Arbol arbole : arboles) {
 
-			try { 
-				if (arboles[i].getPosicion().distancia(centro) < arbolMasAlejadoReferenciado.getPosicion().distancia(centro)) {
-					arbolMasCentrado = arboles[i];
+			try {
+				if (arbole.getPosicion().distancia(centro) < arbolMasAlejadoReferenciado.getPosicion().distancia(centro)) {
+					arbolMasCentrado = arbole;
 				}
 			} catch (Exception e) {
 				e.getMessage();
@@ -212,11 +213,11 @@ public class Bosque {
 		}
 
 		//Recorro todos arboles y comparo con mas alejado
-		for (int i = 0; i < arboles.length; i++) {
+		for (Arbol arbole : arboles) {
 
 			try {
-				if (arboles[i].getPosicion().distancia(centro) > arbolMasCercanoReferenciado.getPosicion().distancia(perimetro)) {
-					arbolMasAlejado = arboles[i];
+				if (arbole.getPosicion().distancia(centro) > arbolMasCercanoReferenciado.getPosicion().distancia(perimetro)) {
+					arbolMasAlejado = arbole;
 				}
 			} catch (Exception e) {
 				e.getMessage();
@@ -228,6 +229,6 @@ public class Bosque {
 	public String toString() {
 		return "Bosque [ancho=" + ancho + ", alto=" + alto + ", arboles=" + Arrays.toString(arboles) + "]";
 	}
-	
+
 
 }

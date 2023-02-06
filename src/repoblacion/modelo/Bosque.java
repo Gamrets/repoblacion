@@ -113,9 +113,8 @@ public class Bosque {
 		// Especie especieAleatoria = null;
 
 		// Generamos especie aleatoria
-		int n = generador.nextInt(7) + 0;
 
-		switch (n) {
+		switch (generador.nextInt(7) + 0) {
 			case 0:
 				return Especie.ALAMO;
 
@@ -175,9 +174,7 @@ public class Bosque {
 						|| epecieAnterior == Especie.CIPRES || epecieAnterior == Especie.OLIVO)) {
 
 					especieCompatible = false;
-				}
-
-				if (especieAleatoria == Especie.OLIVO
+				}else if (especieAleatoria == Especie.OLIVO
 						&& (epecieAnterior == Especie.ALAMO || epecieAnterior == Especie.ENCINA)) {
 
 					especieCompatible = false;
@@ -194,35 +191,7 @@ public class Bosque {
 
 	public void realizarCalculos() {
 
-		//Creo 2 arboeles de referencia el de centro y mas alejado del centro
-		Posicion centro = new Posicion(0, 0);
-		Posicion perimetro = new Posicion(1000, 500);
-		Arbol arbolMasAlejadoReferenciado = new Arbol(Especie.ALAMO, centro);
-		Arbol arbolMasCercanoReferenciado = new Arbol(Especie.ALAMO, perimetro);
-
-		//Recorro todos arboles y comparo con mas centrado
-		for (Arbol arbole : arboles) {
-
-			try {
-				if (arbole.getPosicion().distancia(centro) < arbolMasAlejadoReferenciado.getPosicion().distancia(centro)) {
-					arbolMasCentrado = arbole;
-				}
-			} catch (Exception e) {
-				e.getMessage();
-			}
-		}
-
-		//Recorro todos arboles y comparo con mas alejado
-		for (Arbol arbole : arboles) {
-
-			try {
-				if (arbole.getPosicion().distancia(centro) > arbolMasCercanoReferenciado.getPosicion().distancia(perimetro)) {
-					arbolMasAlejado = arbole;
-				}
-			} catch (Exception e) {
-				e.getMessage();
-			}
-		}
+		
 	}
 
 	@Override

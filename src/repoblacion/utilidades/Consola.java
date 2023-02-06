@@ -12,7 +12,7 @@ public class Consola {
 		int anchura;
 		
 		do {
-			System.out.println("Intoduce valor de la anchura, minimo 0 maximo 1000" );
+			System.out.println("Intoducede la anchura del bosque: " );
 			
 			anchura = Entrada.entero();
 			
@@ -27,7 +27,7 @@ public class Consola {
 		int altura;
 		
 		do {
-			System.out.println("Intoduce valor de la altura, minimo 0 maximo 500" );
+			System.out.println("Intoducede la altura del bosque: " );
 			altura = Entrada.entero();
 			
 		}
@@ -40,7 +40,7 @@ public class Consola {
 		
 		int poblacion;
 		
-		do {System.out.println("Intoduce valor de la poblacion, minimo 0" );
+		do {System.out.println("Intoducede la poblacion de especies: " );
 			poblacion = Entrada.entero();
 		
 		}
